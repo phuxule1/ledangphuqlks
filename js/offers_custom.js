@@ -307,7 +307,35 @@ $(document).ready(function()
 			data:{getTourForOffer:1},
 			success:function(data){
 				$('div#myDropdown').html(data);
+				callClickAfterAjax();
 			}
+		});
+	}
+
+	function callClickAfterAjax(){
+		$('p.selTour').on('click', function() {
+			//set text for search input
+			$('#input_search').val($(this).text());
+
+			//hide all list of tours
+			var div, p, i;
+			div = document.getElementById("myDropdown");
+			p = div.getElementsByTagName("p");
+			for(i=0; i<p.length; i++){
+				p[i].style.display = "none";
+			}
+
+			//load info of the tour
+			var tour_id = $(this).attr('tourid');
+			$.ajax({
+				type: "POST",
+				url: "../include/action.php",
+				data: {getTourInfo:1, tourId:tour_id},
+				success: function (data) {
+					$('div.search_item:first-child').nextAll().remove();
+					$('div.search_item:first-child').after(data);
+				}
+			});
 		});
 	}
 

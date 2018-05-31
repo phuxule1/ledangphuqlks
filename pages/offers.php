@@ -396,22 +396,26 @@
 
 <script>
 function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
+	if($('input#input_search').val() != null && $('input#input_search').val() != ""){
+		$('#myDropdown').addClass("show");
+		filterFunction();
+	}
+	else $('#myDropdown').removeClass("show");
 }
 
 function filterFunction() {
-  var input, filter, ul, li, a, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  div = document.getElementById("myDropdown");
-  a = div.getElementsByTagName("a");
-  for (i = 0; i < a.length; i++) {
-    if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-      a[i].style.display = "";
-    } else {
-      a[i].style.display = "none";
-    }
-  }
+	var input, filter, ul, li, p, i;
+	input = document.getElementById("input_search");
+	filter = input.value.toUpperCase();
+	div = document.getElementById("myDropdown");
+	p = div.getElementsByTagName("p");
+	for (i = 0; i < p.length; i++) {
+		if (p[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+			p[i].style.display = "";
+		} else {
+			p[i].style.display = "none";
+		}
+	}
 }
 </script>
 
