@@ -138,9 +138,9 @@
 							</div>
 							<div class="search_item">
 								<div>Số người đi</div>
-								<input type="number" class="destination search_input" required="required" min="1" max="100" onkeydown="javascript: return event.keyCode == 69 || event.keyCode == 189 ? false : true">
+								<input type="number" class="destination search_input" id="number_people" required="required" min="1" max="100" onkeydown="javascript: return event.keyCode == 69 || event.keyCode == 189 ? false : true">
 							</div>
-							<button class="button search_button">Tìm kiếm<span></span><span></span><span></span></button>
+							<button class="button search_button" id="search_tour">Tìm kiếm<span></span><span></span><span></span></button>
 						</form>
 					</div>
 				</div>

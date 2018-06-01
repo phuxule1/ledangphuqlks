@@ -1429,6 +1429,7 @@ section
 {
 	width: 100%;
 	margin-top: 66px;
+	height: auto !important;
 }
 .offers_item
 {
@@ -1464,7 +1465,8 @@ section
 	position: absolute;
 	left: 0;
 	bottom: 27px;
-	width: 180px;
+	width: fit-content;
+    padding-right: 10px;
 	height: 33px;
 	background: #fa9e1b;
 	overflow: hidden;

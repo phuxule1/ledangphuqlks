@@ -312,6 +312,18 @@ $(document).ready(function()
 		});
 	}
 
+	getListTour();
+	function getListTour(){
+		$.ajax({
+			url:'../include/action.php',
+			type:'POST',
+			data:{getListOfTour:1},
+			success:function(data){
+				$('div.offers_grid').html(data);
+			}
+		});
+	}
+
 	function callClickAfterAjax(){
 		$('p.selTour').on('click', function() {
 			//set text for search input
@@ -332,10 +344,33 @@ $(document).ready(function()
 				url: "../include/action.php",
 				data: {getTourInfo:1, tourId:tour_id},
 				success: function (data) {
-					$('div.search_item:first-child').nextAll().remove();
-					$('div.search_item:first-child').after(data);
+					var div = $('input#input_search').parent().parent();
+					div.nextAll().remove();
+					div.after(data);
+					$('button#search_tour').attr('tourId', tour_id);
+					callSearchTour();
 				}
 			});
+		});
+	}
+
+	function callSearchTour() {
+		//show info of tour
+		$('button#search_tour').on('click', function (event) {
+			event.preventDefault();
+			if($('input#number_people').val() != null && $('input#number_people').val() != ""){
+				var tour_id = $(this).attr('tourId');
+				$.ajax({
+					type: "POST",
+					url: "../include/action.php",
+					data: {getTourDetail:1, tourId:tour_id},
+					success: function (data) {
+						$('div.offers_grid').html(data);
+					}
+				});
+			}else{
+				alert('Vui lòng nhập số người đi');
+			}
 		});
 	}
 
