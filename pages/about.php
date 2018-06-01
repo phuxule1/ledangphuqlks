@@ -33,9 +33,15 @@
 				</div>
 				<div class="col-lg-5">
 					<div class="intro_content">
-						<div class="intro_title">chúng tôi có những chuyến tham quan tốt nhất</div>
-						<p class="intro_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis vulputate eros, iaculis consequat nisl. Nunc et suscipit urna. Integer elementum orci eu vehicula pretium. Donec bibendum tristique condimentum. Aenean in lacus ligula. Phasellus euismod gravida eros. Aenean nec ipsum aliquet, pharetra magna id, interdum sapien. Etiam id lorem eu nisl pellentesque semper. Nullam tincidunt metus placerat, suscipit leo ut, tempus nulla. Fusce at eleifend tellus. Ut eleifend dui nunc, non fermentum quam placerat non. Etiam venenatis nibh augue, sed eleifend justo tristique eu</p>
-						<div class="button intro_button"><div class="button_bcg"></div><a href="#">explore now<span></span><span></span><span></span></a></div>
+						<h4 style="text-align:center;color: blueviolet">SỞ THÍCH ĐI DU LỊCH</h4>
+							<p class="write1">
+								Du lịch là một thành phần cốt lõi của cuộc sống từ khi tôi còn rất trẻ. Đối với một số người, nó là một sự lãng phí thời gian và tiền bạc. Họ tranh luận việc sử dụng các cách thay thế như đọc một cuốn sách hay xem một bộ phim về các địa danh thay vì đi du lịch. Họ quên rằng việc chạm tay vào thực tế đem lại một loại cảm xúc và sự hài lòng khác biệt.
+								Không nghi ngờ gì khi một người được trải nghiệm cuộc sống nhiều hơn bằng cách đi bộ một dặm so với đọc toàn bộ một cuốn sách. Đó là một cảm giác tự do. Bạn có thể quen những người bạn mới, thoát khỏi nỗi thất vọng hằng ngày, và cho mình một chút thời gian để trải nghiệm một cái gì đó mới.
+								Những người thích đi du lịch có nhiều sự lựa chọn cho mỗi lần đi. Thế giới rất rộng lớn và có rất nhiều nơi để đến thăm. Mỗi nơi có một vẻ đẹp khác nhau, những sinh vật, văn hóa, đặc trưng, ngôn ngữ, lịch sử và thời tiết khác nhau.
+								Đi du lịch có thể là một sở thích tốn kém nhưng cò vài cách để khiến số tiền đó xứng đáng. Bạn có thể tìm hiểu chi tiết về nơi mà bạn sẽ đến. Một sự lựa chọn vị trí hoặc một gói du lịch khôn ngoan phần mềm sẽ giúp giảm chi phí cho bạn.
+								Đi du lịch là một sở thích giáo dục hoàn hảo vì nó giúp bạn học hỏi được rất nhiều điều mới trong cuộc sống. Đi du lịch mang lại cho bạn một sự đột phá lớn từ công việc hằng ngày và một cơ hội để học hỏi một nền văn hóa mới và kết bạn. Những người bạn tình cờ gặp và tương tác với biết đâu sẽ mang lại cho bạn những cơ hội mới trong cuộc sống, hay họ có thể giúp bạn mở mang đầu óc.
+								Đây hoàn toàn là một sở thích đầy cảm hứng để viết nếu bạn biết cách sắp xếp các ý hợp lí phải không nào?
+							</p>
 					</div>
 				</div>
 			</div>
@@ -53,14 +59,14 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1 text-center">
-					<p class="stats_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis vulputate eros, iaculis consequat nisl. Nunc et suscipit urna. Integer elementum orci eu vehicula pretium. Donec bibendum tristique condimentum. Aenean in lacus ligula. </p>
+					<p class="stats_text" style="font-size: 20px">Thống kê doanh thu đạt được và những sự thay đổi về khách hàng, địa điểm du lịch trong năm vừa qua  </p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col">
 					<div class="stats_years">
-						<div class="stats_years_last">2016</div>
-						<div class="stats_years_new float-right">2017</div>
+						<div class="stats_years_last">2017</div>
+						<div class="stats_years_new float-right">2018</div>
 					</div>
 				</div>
 			</div>
@@ -163,7 +169,7 @@
 								</div>
 								<div class="stats_last_content">
 									<div class="stats_number">3729</div>
-									<div class="stats_type">Mặt hàng</div>
+									<div class="stats_type">Tổng số</div>
 								</div>
 							</div>
 							<div class="stats_bar order-md-2 order-2" data-x="3729" data-y="17429" data-color="#fa9e1b">
@@ -179,7 +185,7 @@
 								</div>
 								<div class="stats_new_content">
 									<div class="stats_number">17429</div>
-									<div class="stats_type">Mặt hàng</div>
+									<div class="stats_type">Tổng số</div>
 								</div>
 							</div>
 						</div>
@@ -200,8 +206,7 @@
 						<div class="add_background" style="background-image:url(../images//add.jpg)"></div>
 						<div class="add_content">
 							<h1 class="add_title">Kỳ Co - Quy Nhơn City</h1>
-							<div class="add_subtitle">From <span>$999</span></div>
-							<div class="button add_button"><div class="button_bcg"></div><a href="#">Xem thêm<span></span><span></span><span></span></a></div>
+							<div class="add_subtitle">Chỉ từ <span>3000000 đồng</span></div>
 						</div>
 					</div>
 				</div>
@@ -220,7 +225,7 @@
 					<div class="milestone text-center">
 						<div class="milestone_icon"><img src="../images//milestone_1.png" alt=""></div>
 						<div class="milestone_counter" data-end-value="255">0</div>
-						<div class="milestone_text">Clients</div>
+						<div class="milestone_text">Khách hàng</div>
 					</div>
 				</div>
 
@@ -229,7 +234,7 @@
 					<div class="milestone text-center">
 						<div class="milestone_icon"><img src="../images//milestone_2.png" alt=""></div>
 						<div class="milestone_counter" data-end-value="1176">0</div>
-						<div class="milestone_text">Projects</div>
+						<div class="milestone_text">Kế hoạch</div>
 					</div>
 				</div>
 
@@ -238,7 +243,7 @@
 					<div class="milestone text-center">
 						<div class="milestone_icon"><img src="../images//milestone_3.png" alt=""></div>
 						<div class="milestone_counter" data-end-value="39">0</div>
-						<div class="milestone_text">Countries</div>
+						<div class="milestone_text">Địa điểm du lịch</div>
 					</div>
 				</div>
 
@@ -247,7 +252,7 @@
 					<div class="milestone text-center">
 						<div class="milestone_icon"><img src="../images//milestone_4.png" alt=""></div>
 						<div class="milestone_counter" data-end-value="127">0</div>
-						<div class="milestone_text">Coffees</div>
+						<div class="milestone_text">Thực phẩm</div>
 					</div>
 				</div>
 
@@ -268,6 +273,16 @@
 <script src="../plugins/greensock/ScrollToPlugin.min.js"></script>
 <script src="../plugins/parallax-js-master/parallax.min.js"></script>
 <script src="../js/about_custom.js"></script>
+
+<script type="text/javascript" src="https://cdn.rawgit.com/vaakash/jquery-collapser/master/jquery.collapser.min.js"></script>
+<script type="text/javascript">
+$('p.write1').collapser({
+		 mode: 'words',
+		 truncate: 150,
+		 showText: 'XEM THÊM',
+		hideText: 'THU GỌN'
+ });
+</script>
 
 </body>
 
