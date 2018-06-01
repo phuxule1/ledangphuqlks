@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2018 at 10:42 AM
+-- Generation Time: Jun 01, 2018 at 01:32 PM
 -- Server version: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- PHP Version: 7.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -39,7 +39,9 @@ CREATE TABLE `chitiethoadon` (
 --
 
 INSERT INTO `chitiethoadon` (`MADH`, `MATOUR`, `NGAYDAT`) VALUES
-('DH001', 'T0001', '2018-05-31');
+('DH001', 'T0001', '2018-05-31'),
+('MHc4K', 'T0001', '2018-06-01'),
+('MHRYf', 'T0001', '2018-06-01');
 
 -- --------------------------------------------------------
 
@@ -50,7 +52,7 @@ INSERT INTO `chitiethoadon` (`MADH`, `MATOUR`, `NGAYDAT`) VALUES
 CREATE TABLE `dondattour` (
   `MADH` char(5) COLLATE utf8_unicode_ci NOT NULL,
   `TINHTRANG` bit(1) NOT NULL DEFAULT b'0',
-  `SOLUONGDAT` int(11) NOT NULL,
+  `SOLUONGNGUOI` int(11) NOT NULL,
   `MAKH` char(5) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -58,8 +60,10 @@ CREATE TABLE `dondattour` (
 -- Dumping data for table `dondattour`
 --
 
-INSERT INTO `dondattour` (`MADH`, `TINHTRANG`, `SOLUONGDAT`, `MAKH`) VALUES
-('DH001', b'0', 2, 'KH001');
+INSERT INTO `dondattour` (`MADH`, `TINHTRANG`, `SOLUONGNGUOI`, `MAKH`) VALUES
+('DH001', b'0', 2, 'KH001'),
+('MHc4K', b'0', 2, 'KH001'),
+('MHRYf', b'0', 2, 'KH001');
 
 -- --------------------------------------------------------
 
@@ -96,7 +100,6 @@ INSERT INTO `taikhoan` (`MAKH`, `USER_NAME`, `PASSWORD`, `ROLE_ID`, `GIOITINH`, 
 CREATE TABLE `tour` (
   `MATOUR` char(5) COLLATE utf8_unicode_ci NOT NULL,
   `DIADIEMTOUR` varchar(200) CHARACTER SET utf8 NOT NULL,
-  `LOTRINH` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `SOLUONGNGUOI` tinyint(4) NOT NULL,
   `NGAYDI` date NOT NULL,
   `NGAYVE` date NOT NULL,
@@ -107,15 +110,15 @@ CREATE TABLE `tour` (
 -- Dumping data for table `tour`
 --
 
-INSERT INTO `tour` (`MATOUR`, `DIADIEMTOUR`, `LOTRINH`, `SOLUONGNGUOI`, `NGAYDI`, `NGAYVE`, `DONGIA`) VALUES
-('T0001', 'TP.HCM - VŨNG TÀU', 'TP.HCM - PHÀ CÁT LÁI - QL51 - VŨNG TÀU', 10, '2018-06-15', '2018-06-18', 3000000),
-('T0002', 'TP.HCM - ĐÀ LẠT', 'TP.HCM - LONG THÀNH - QL20 - ĐÀ LẠT', 20, '2018-06-07', '2018-06-10', 5000000),
-('T0003', 'TP.HCM - PHAN THIẾT', 'TP.HCM - LONG THÀNH - QL1A PHAN THIẾT', 30, '2018-06-15', '2018-06-20', 5000000),
-('T0004', 'TP.HCM - NHA TRANG', 'TP.HCM - TRƯỜNG CHINH - LONG THÀNH - QL27C - NHA TRANG', 30, '2018-06-10', '2018-06-13', 6000000),
-('T0005', 'TP.HCM - ĐÀ NẴNG', 'TP.HCM - QL14 - QL1A ĐÀ NẴNG', 45, '2018-06-27', '2018-06-29', 20000000),
-('T0006', 'TP.HCM - HÀ NỘI', 'TP.HCM - QL22 - QL14 - QL1 - QL6 - HÀ NỘI', 10, '2018-06-27', '2018-06-30', 20000000),
-('T0007', 'TP.HCM - MŨI NÉ', 'TP.HCM - LONG THÀNH - QL1A - MŨI NÉ', 40, '2018-06-27', '2018-06-30', 20000000),
-('T0008', 'TP.HCM - CẦN GIỜ', 'TP.HCM - QL50 - ĐI PHÀ - LÝ NHƠN - CẦN GIỜ', 40, '2018-06-20', '2018-06-25', 8000000);
+INSERT INTO `tour` (`MATOUR`, `DIADIEMTOUR`, `SOLUONGNGUOI`, `NGAYDI`, `NGAYVE`, `DONGIA`) VALUES
+('T0001', 'TP.HCM - VŨNG TÀU', 10, '2018-06-15', '2018-06-18', 3000000),
+('T0002', 'TP.HCM - ĐÀ LẠT', 20, '2018-06-07', '2018-06-10', 5000000),
+('T0003', 'TP.HCM - PHAN THIẾT', 30, '2018-06-15', '2018-06-20', 5000000),
+('T0004', 'TP.HCM - NHA TRANG', 30, '2018-06-10', '2018-06-13', 6000000),
+('T0005', 'TP.HCM - ĐÀ NẴNG', 45, '2018-06-27', '2018-06-29', 20000000),
+('T0006', 'TP.HCM - HÀ NỘI', 10, '2018-06-27', '2018-06-30', 20000000),
+('T0007', 'TP.HCM - MŨI NÉ', 40, '2018-06-27', '2018-06-30', 20000000),
+('T0008', 'TP.HCM - CẦN GIỜ', 40, '2018-06-20', '2018-06-25', 8000000);
 
 --
 -- Indexes for dumped tables
