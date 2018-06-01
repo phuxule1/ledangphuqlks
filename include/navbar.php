@@ -1,5 +1,5 @@
 <?php
-  session_start();
+  
 ?>
 <link rel="stylesheet" type="text/css" href="../styles/custom.css">
 <!-- Header -->

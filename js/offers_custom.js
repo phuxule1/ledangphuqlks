@@ -358,19 +358,15 @@ $(document).ready(function()
 		//show info of tour
 		$('button#search_tour').on('click', function (event) {
 			event.preventDefault();
-			if($('input#number_people').val() != null && $('input#number_people').val() != ""){
-				var tour_id = $(this).attr('tourId');
-				$.ajax({
-					type: "POST",
-					url: "../include/action.php",
-					data: {getTourDetail:1, tourId:tour_id},
-					success: function (data) {
-						$('div.offers_grid').html(data);
-					}
-				});
-			}else{
-				alert('Vui lòng nhập số người đi');
-			}
+			var tour_id = $(this).attr('tourId');
+			$.ajax({
+				type: "POST",
+				url: "../include/action.php",
+				data: {getTourDetail:1, tourId:tour_id},
+				success: function (data) {
+					$('div.offers_grid').html(data);
+				}
+			});
 		});
 	}
 

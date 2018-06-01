@@ -1,3 +1,9 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['qlks_user'])){
+		header('location:register.php');
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,45 +38,39 @@
 </br>
   			<h1 style="text-align:center"><span>XÁC NHẬN ĐƠN ĐẶT</span></h1></br>
   					<div class="span12" style="width: 100%">
-  						<form action="../include/register_handle.php" method="post" class="form-stacked" style="text-align:center">
+  						<form action="#" method="post" class="form-stacked" style="text-align:center">
   							<fieldset>
   								<div class="control-group">
   									<label class="control-label" style="font-size: 22px">Tour đã đặt</label>
   									<div class="controls">
-  										<input type="text" placeholder="" class="input-xlarge" style="padding:1%">
+  										<input type="text" placeholder="" id="tentour" class="input-xlarge text-center" style="padding:1%" disabled>
   									</div>
   								</div>
                   <div class="control-group">
                     <label class="control-label" style="font-size: 20px">Số lượng người</label>
                     <div class="controls">
-                      <input type="text" placeholder="" class="input-xlarge" style="padding:1%">
+                      <input type="number" placeholder="" id="soluongnguoidi" min="1" max="50" class="input-xlarge text-center" style="padding:1%" onkeydown="javascript: return event.keyCode == 69 || event.keyCode == 189 ? false : true">
                     </div>
                   </div>
                   <div class="control-group">
                     <label class="control-label" style="font-size: 22px">Ngày xuất phát</label>
                     <div class="controls">
-                      <input type="date" placeholder="" class="input-xlarge" style="padding:1%">
+                      <input type="date" placeholder="" id="ngaydi" class="input-xlarge text-center" style="padding:1%" disabled>
                     </div>
                   </div>
                   <div class="control-group">
                     <label class="control-label" style="font-size: 20px">Ngày kết thúc</label>
                     <div class="controls">
-                      <input type="date" placeholder="" class="input-xlarge" style="padding:1%">
+                      <input type="date" placeholder="" id="ngayve" class="input-xlarge text-center" style="padding:1%" disabled>
                     </div>
                   </div>
   								<div class="control-group">
-  									<label class="control-label" style="font-size: 20px">Tên khách hàng</label>
+  									<label class="control-label" style="font-size: 20px">Tổng tiền</label>
   									<div class="controls">
-  										<input type="text" placeholder="" class="input-xlarge" style="padding:1%">
+  										<input type="text" placeholder="" id="tongtien" class="input-xlarge text-center" style="padding:1%" disabled>
   									</div>
   								</div>
-  								<div class="control-group">
-  									<label class="control-label" style="font-size: 20px">Điện thoại di dộng</label>
-  									<div class="controls">
-  										<input type="password" placeholder="" class="input-xlarge" style="padding:1%">
-  									</div>
-  								</div>
-  								<div class="actions"><input tabindex="9" class="btn btn-inverse large" type="submit" value="Đặt tour"></div>
+  								<div class="actions"><button class="btn btn-inverse btn-lg" id="btn_dattour">Đặt tour</button></div>
   							</fieldset>
   						</form>
   					</div>
@@ -83,7 +83,7 @@
 <script src="../themes/js/superfish.js"></script>
 <script src="../plugins/colorbox/jquery.colorbox-min.js"></script>
 <script src="../plugins/parallax-js-master/parallax.min.js"></script>
-<script src="../js/blog_custom.js"></script>
+<script src="../js/order_custom.js"></script>
 
 </body>
 

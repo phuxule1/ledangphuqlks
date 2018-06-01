@@ -1,4 +1,6 @@
-<?php include 'db.php';
+<?php 
+  session_start();
+  include 'db.php';
 
   //================================ offers.php ================================
   if(isset($_POST['getTourForOffer'])){
@@ -24,10 +26,6 @@
             <div class="search_item">
               <div>Ngày kết thúc</div>
               <input type="text" class="check_out search_input" placeholder="YYYY-MM-DD" disabled value="'.$row['NGAYVE'].'">
-            </div>
-            <div class="search_item">
-              <div>Số người đi</div>
-              <input type="number" class="destination search_input" id="number_people" required="required" min="1" max="100" onkeydown="javascript: return event.keyCode == 69 || event.keyCode == 189 ? false : true">
             </div>
             <button class="button search_button" id="search_tour">Tìm kiếm<span></span><span></span><span></span></button>';
     }
@@ -67,7 +65,7 @@
                         <li class="offers_icons_item"><img src="../images/sailboat.png" alt=""></li>
                       </ul>
                     </div>
-                    <div class="button book_button"><a href="#" tourId="'.$row['MATOUR'].'">Đặt Tour<span></span><span></span><span></span></a></div>
+                    <div class="button book_button"><a href="order.php?tourId='.$row['MATOUR'].'">Đặt Tour<span></span><span></span><span></span></a></div>
                     <div class="offer_reviews">
                       <div class="offer_reviews_content">
                         <div class="offer_reviews_title">very good</div>
@@ -115,7 +113,7 @@
                         <li class="offers_icons_item"><img src="../images/sailboat.png" alt=""></li>
                       </ul>
                     </div>
-                    <div class="button book_button"><a href="#" tourId="'.$row['MATOUR'].'">Đặt Tour<span></span><span></span><span></span></a></div>
+                    <div class="button book_button"><a href="order.php?tourId='.$row['MATOUR'].'">Đặt Tour<span></span><span></span><span></span></a></div>
                     <div class="offer_reviews">
                       <div class="offer_reviews_content">
                         <div class="offer_reviews_title">very good</div>
@@ -131,5 +129,66 @@
     }
   }
 
-  //================================ ....php ================================
+  //================================ order.php ================================
+  if(isset($_POST['getTourNameRequire'])){
+    $tour_id = $_POST['tourId'];
+    $sql = "SELECT * FROM `tour` WHERE MATOUR='$tour_id'";
+    $run_query = mysqli_query($connect, $sql);
+    if(mysqli_num_rows($run_query) > 0){
+      $row = mysqli_fetch_assoc($run_query);
+      echo $row['DIADIEMTOUR'];
+    }
+  }
+
+  if(isset($_POST['getTourNgaydiRequire'])){
+    $tour_id = $_POST['tourId'];
+    $sql = "SELECT * FROM `tour` WHERE MATOUR='$tour_id'";
+    $run_query = mysqli_query($connect, $sql);
+    if(mysqli_num_rows($run_query) > 0){
+      $row = mysqli_fetch_assoc($run_query);
+      echo $row['NGAYDI'];
+    }
+  }
+
+  if(isset($_POST['getTourNgayveRequire'])){
+    $tour_id = $_POST['tourId'];
+    $sql = "SELECT * FROM `tour` WHERE MATOUR='$tour_id'";
+    $run_query = mysqli_query($connect, $sql);
+    if(mysqli_num_rows($run_query) > 0){
+      $row = mysqli_fetch_assoc($run_query);
+      echo $row['NGAYVE'];
+    }
+  }
+
+  if(isset($_POST['getTotalRequire'])){
+    $tour_id = $_POST['tourId'];
+    $soluong = $_POST['soluong'];
+    $sql = "SELECT * FROM `tour` WHERE MATOUR='$tour_id'";
+    $run_query = mysqli_query($connect, $sql);
+    if(mysqli_num_rows($run_query) > 0){
+      $row = mysqli_fetch_assoc($run_query);
+      echo number_format($row['DONGIA']*$soluong, 0, ".", ",").' VNĐ';
+    }
+  }
+
+  if(isset($_POST['saveTourRequire'])){
+    $makh = $_SESSION["qlks_user"]["makh"];
+    $tour_id = $_POST['tourId'];
+    $soluong = $_POST['soluong'];
+
+    //insert to table hdban
+		$pre_bill_id = "MH";
+		$characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    for ($i = 0; $i < 3; $i++)
+        $pre_bill_id .= $characters[mt_rand(0, 61)];
+    $sql = "INSERT INTO `dondattour` (`MaDH`, `TINHTRANG`, `SOLUONGNGUOI`, `MAKH`) VALUES ('$pre_bill_id', 0, '$soluong','$makh' )";
+    if(mysqli_query($connect, $sql)){
+      date_default_timezone_set("Asia/Ho_Chi_Minh");
+	    $date = date('Y-m-d', time());
+      $sql = "INSERT INTO `chitiethoadon` (`MaDH`, `MATOUR`, `NGAYDAT`) VALUES ('$pre_bill_id', '$tour_id','$date') ";
+      if(!mysqli_query($connect, $sql)){
+        echo mysqli_error($connect);
+      }else echo 'Đơn đặt tour thành công, nhân viên cửa hàng sẽ liên hệ quý khách sớm nhất. Xin chân thành cảm ơn!!!';
+    }else echo mysqli_error($connect);
+  }
 ?>

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,10 +136,6 @@
 							<div class="search_item">
 								<div>Ngày kết thúc</div>
 								<input type="text" class="check_out search_input" placeholder="YYYY-MM-DD" disabled>
-							</div>
-							<div class="search_item">
-								<div>Số người đi</div>
-								<input type="number" class="destination search_input" id="number_people" required="required" min="1" max="100" onkeydown="javascript: return event.keyCode == 69 || event.keyCode == 189 ? false : true">
 							</div>
 							<button class="button search_button" id="search_tour">Tìm kiếm<span></span><span></span><span></span></button>
 						</form>

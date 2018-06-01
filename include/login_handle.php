@@ -8,7 +8,7 @@
 	$run = mysqli_query($connect, $sql);
 	if (mysqli_num_rows($run) > 0) {
 		$row = mysqli_fetch_array($run);
-		$arr = array('fullname' => $row['HOTEN'], 'username' => $row['USER_NAME'], 'roleid' => $row['ROLE_ID']);
+		$arr = array('fullname' => $row['HOTEN'], 'username' => $row['USER_NAME'], 'roleid' => $row['ROLE_ID'], 'makh' => $row['MAKH']);
 		$_SESSION["qlks_user"] = $arr;
 		echo '<script type="text/javascript">alert("Đăng Nhập Thành Công");</script>';
 		header("location:../pages/index.php");
