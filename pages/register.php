@@ -90,13 +90,13 @@
   								<div class="control-group">
   									<label class="control-label">Địa chỉ Email</label>
   									<div class="controls">
-  										<input type="password" placeholder="Địa chỉ Email" class="input-xlarge">
+  										<input type="email" placeholder="Địa chỉ Email" class="input-xlarge">
   									</div>
   								</div>
   								<div class="control-group">
   									<label class="control-label">Điện thoại di dộng</label>
   									<div class="controls">
-  										<input type="password" placeholder="" class="input-xlarge">
+  										<input type="tel" placeholder="" class="input-xlarge">
   									</div>
   								</div>
   								<div class="actions"><input tabindex="9" class="btn btn-inverse large" type="submit" value="Tạo tài khoản"></div>
