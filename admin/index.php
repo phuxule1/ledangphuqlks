@@ -1,7 +1,6 @@
 <?php
 	include_once 'inc/header.php';
 ?>
-
 	<nav class="navbar navbar-expand navbar-light bg-white">
 		<button type="button" class="btn btn-sidebar" data-toggle="sidebar">
 		  	<i class="fa fa-bars"></i>

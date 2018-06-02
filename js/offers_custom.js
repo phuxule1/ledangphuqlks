@@ -370,4 +370,29 @@ $(document).ready(function()
 		});
 	}
 
+	//-----------------------------------------------------------------------
+	$('input#diachinoiden').on('keyup', function(event) {
+		event.preventDefault();
+		var diachi = $('input#diachinoiden').val();
+		if(diachi != null && diachi != ""){
+			$.ajax({
+				type: "POST",
+				url: "../include/action.php",
+				data: {findRoomRequire:1, diachitimkiem:diachi},
+				success: function (data) {
+					$('div.offers_grid').html(data);
+				}
+			});
+		}else{
+			$.ajax({
+				url:'../include/action.php',
+				type:'POST',
+				data:{getListOfRoom:1},
+				success:function(data){
+					$('div.offers_grid').html(data);
+				}
+			});
+		}
+	});
+
 });

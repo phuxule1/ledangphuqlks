@@ -112,5 +112,6 @@
 <script src="../plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 <script src="../plugins/easing/easing.js"></script>
 <script src="../themes/js/jquery.scrolltotop.js"></script>
+<script src="../admin/js/moment.js"></script>
 <script src="../js/custom.js"></script>
  <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5ae6a85cde20620011e034fd&product=custom-share-buttons"></script>

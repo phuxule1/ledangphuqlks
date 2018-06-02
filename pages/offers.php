@@ -14,27 +14,22 @@
 	<?php include '../include/navbar.php';  ?>
 
 	<!-- Home -->
-
 	<div class="home">
 		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="../images/about_background.jpg"></div>
 		<div class="home_content">
 			<div class="home_title">Dịch vụ</div>
 		</div>
 	</div>
+
 	<!-- Search -->
-
-
 	<div class="search">
 
-
 		<!-- Search Contents -->
-
 		<div class="container fill_height">
 			<div class="row fill_height">
 				<div class="col fill_height">
 
 					<!-- Search Tabs -->
-
 					<div class="search_tabs_container">
 						<div class="search_tabs d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
 							<div class="search_tab active d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="../images/suitcase.png" alt=""><span>Homestays</span></div>
@@ -44,41 +39,11 @@
 					</div>
 
 					<!-- Search Panel -->
-
 					<div class="search_panel active">
-						<form action="#" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
-							<div class="search_item">
-								<div>Nơi đến</div>
-								<input type="text" class="destination search_input" required="required">
-							</div>
-							<div class="search_item">
-								<div>Ngày đặt phòng</div>
-								<input type="text" class="check_in search_input" placeholder="YYYY-MM-DD">
-							</div>
-							<div class="search_item">
-								<div>Ngày trả phòng </div>
-								<input type="text" class="check_out search_input" placeholder="YYYY-MM-DD">
-							</div>
-							<div class="search_item">
-								<div>Người lớn</div>
-								<select name="adults" id="adults_1" class="dropdown_item_select search_input">
-									<option>01</option>
-									<option>02</option>
-									<option>03</option>
-									<option>04</option>
-									<option>05</option>
-								</select>
-							</div>
-							<div class="search_item">
-								<div>Trẻ em</div>
-								<select name="children" id="children_1" class="dropdown_item_select search_input">
-									<option>0</option>
-									<option>02</option>
-									<option>03</option>
-								</select>
-							</div>
-							<button class="button search_button">Tìm kiếm<span></span><span></span><span></span></button>
-						</form>
+						<div class="search_item" style="margin: 0 auto">
+							<div>Noi đến</div>
+							<input type="text" class="destination search_input" id="diachinoiden" placeholder="Nhập nơi bạn muốn đến" required="required">
+						</div>
 					</div>
 					<!-- Search Panel -->
 					<div class="search_panel">
@@ -143,7 +108,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+		</div>
 	<!-- Offers -->
 
 	<div class="offers">

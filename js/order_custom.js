@@ -72,6 +72,62 @@ $(document).ready(function () {
         }else alert('Vui lòng nhập số người đi');
     });
 
+    //====================== dat phong ===========================
+    getRoomHotel();
+    function getRoomHotel(){
+        var room_id = getUrlParams('roomId', window.location.href);
+        $.ajax({
+            type: "POST",
+            url: "../include/action.php",
+            data: {getRoomHotelRequire:1, roomId:room_id},
+            success: function (data) {
+                $('input#tenphong_ks').val(data);
+            }
+        });
+    }
+
+    $('input#soluongkhachdi').on('keyup', function(){
+        var room_id = getUrlParams('roomId', window.location.href);
+        var songuoidi = $('input#soluongkhachdi').val();
+        $.ajax({
+            type: "POST",
+            url: "../include/action.php",
+            data: {getTotalRoomRequire:1, roomId:room_id, soluong:songuoidi},
+            success: function (data) {
+                $('input#tongtienphong').val(data);
+            }
+        });
+    });
+
+    $('button#btn_datphong').on('click', function(event) {
+        event.preventDefault();
+        if($('input#soluongkhachdi').val() != null && $('input#soluongkhachdi').val() != ""){
+            if($('input#soluongkhachdi').val() > 0){
+                var ngaykhachden = $('input#ngaykhachden').val();
+                var ngaykhachdi = $('input#ngaykhachdi').val();
+                if(moment(ngaykhachden).isValid()){
+                    if(moment(ngaykhachdi).isValid()){
+                        var room_id = getUrlParams('roomId', window.location.href);
+                        var ks_id = getUrlParams('ksId', window.location.href);
+                        var songuoidi = $('input#soluongkhachdi').val();
+                        $.ajax({
+                            type: "POST",
+                            url: "../include/action.php",
+                            data: {saveOrderRoomRequire:1, roomId:room_id, ksId:ks_id, soluong:songuoidi,
+                                    ngayden:ngaykhachden, ngaydi:ngaykhachdi},
+                            success: function (data) {
+                                if(data != null && data != ""){
+                                    alert(data);
+                                    location.href = "index.php";
+                                }
+                            }
+                        });
+                    }else alert('Vui lòng chọn ngày đi');
+                }else alert('Vui lòng chọn ngày đến');
+            }
+        }else alert('Vui lòng nhập số người đi');
+    });
+
     //===================== FUNCTION ============================
     //get url parameters value
 	function getUrlParams(name,url) {
