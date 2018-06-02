@@ -72,31 +72,44 @@
   								<div class="control-group">
   									<label class="control-label">Tên khách hàng</label>
   									<div class="controls">
-  										<input type="text" placeholder="Tên khách hàng" class="input-xlarge">
+  										<input type="text" placeholder="Tên khách hàng" name="regis_fullname" class="input-xlarge">
   									</div>
   								</div>
   								<div class="control-group">
   									<label class="control-label">Tên đăng nhập</label>
   									<div class="controls">
-  										<input type="text" placeholder="Tên đăng nhập" class="input-xlarge">
+  										<input type="text" placeholder="Tên đăng nhập" name="regis_username" class="input-xlarge">
   									</div>
   								</div>
   								<div class="control-group">
   									<label class="control-label">Nhập mật khẩu</label>
   									<div class="controls">
-  										<input type="password" placeholder="Nhập mật khẩu" class="input-xlarge">
+  										<input type="password" placeholder="Nhập mật khẩu" name="regis_password" class="input-xlarge">
+  									</div>
+  								</div>
+								<div class="control-group">
+  									<label class="control-label">Giới tính</label>
+  									<select name="regis_selSex" id="regis_selSex">
+									  	<option value="1">Nam</option>
+										<option value="0">Nữ</option>
+									</select>
+  								</div>
+								<div class="control-group">
+  									<label class="control-label">Địa chỉ khách hàng</label>
+  									<div class="controls">
+  										<input type="text" placeholder="Địa chỉ khách hàng" name="regis_userAddr" class="input-xlarge">
   									</div>
   								</div>
   								<div class="control-group">
   									<label class="control-label">Địa chỉ Email</label>
   									<div class="controls">
-  										<input type="email" placeholder="Địa chỉ Email" class="input-xlarge">
+  										<input type="email" placeholder="Địa chỉ Email" name="regis_emailAddr" class="input-xlarge">
   									</div>
   								</div>
   								<div class="control-group">
   									<label class="control-label">Điện thoại di dộng</label>
   									<div class="controls">
-  										<input type="tel" placeholder="" class="input-xlarge">
+  										<input type="tel" placeholder="Điện thoại di động" name="regis_telephone" class="input-xlarge">
   									</div>
   								</div>
   								<div class="actions"><input tabindex="9" class="btn btn-inverse large" type="submit" value="Tạo tài khoản"></div>
