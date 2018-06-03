@@ -66,24 +66,24 @@
 	      	<div id="create_tour">
 	      		<div class="input-group input_group_custom">
       				<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-      				<input type="text" id="input_diadiemtour" class="form-control custom_input" name="input_diadiemtour" placeholder="Nhập địa điểm tour" required>
+      				<input type="text" id="input_add_diadiemtour" class="form-control custom_input" name="input_diadiemtour" placeholder="Nhập địa điểm tour" required>
       				<div class="clearfix"></div>
       			</div>
       			<div class="input-group input_group_custom">
       				<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-      				<input type="number" id="input_soluongnguoi" class="form-control custom_input" name="input_soluongnguoi" placeholder="Nhập số lượng người tối đa" onkeydown="javascript: return event.keyCode == 69 || event.keyCode == 189 ? false : true" required>
+      				<input type="number" id="input_add_soluongnguoi" class="form-control custom_input" name="input_soluongnguoi" placeholder="Nhập số lượng người tối đa" onkeydown="javascript: return event.keyCode == 69 || event.keyCode == 189 ? false : true" required>
       			</div>
       			<div class="input-group input_group_custom">
       				<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-      				<input type="date" id="input_ngaydi" class="form-control custom_input" name="input_ngaydi" required>
+      				<input type="date" id="input_add_ngaydi" class="form-control custom_input" name="input_ngaydi" required>
       			</div>
       			<div class="input-group input_group_custom">
       				<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-      				<input type="date" id="input_ngayve" class="form-control custom_input" name="input_ngayve" required>
+      				<input type="date" id="input_add_ngayve" class="form-control custom_input" name="input_ngayve" required>
       			</div>
       			<div class="input-group input_group_custom">
       				<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-      				<input type="number" id="input_dongia" class="form-control custom_input" name="input_dongia" onkeydown="javascript: return event.keyCode == 69 || event.keyCode == 189 ? false : true" placeholder="Nhập đơn giá tour" required>
+      				<input type="number" id="input_add_dongia" class="form-control custom_input" name="input_dongia" onkeydown="javascript: return event.keyCode == 69 || event.keyCode == 189 ? false : true" placeholder="Nhập đơn giá tour" required>
       			</div>
 	      	</div>
 	      	<!-- Sửa Tour -->
