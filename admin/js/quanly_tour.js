@@ -175,11 +175,11 @@ jQuery(document).ready(function($) {
 
 	//function check input to edit
 	function checkInput(diadiemtour, slnguoi, ngaydi, ngayve, dongia){
-		if(diadiemtour != null && diadiemtour == ""){
+		if(diadiemtour == null && diadiemtour == ""){
     		alert('Không được để trống địa điểm tour');
     		return 0;
     	}
-    	if(slnguoi != null && slnguoi == ""){
+    	if(slnguoi == null && slnguoi == ""){
     		alert('Không được để trống số lượng người');
     		return 0;
     	}else $('div#error_soluongnguoi').css('display', 'none');
@@ -193,7 +193,7 @@ jQuery(document).ready(function($) {
     		alert('Vui lòng chọn ngày về');
     		return 0;
     	}
-    	if(dongia != null && dongia == ""){
+    	if(dongia == null && dongia == ""){
     		alert('Vui lòng nhập đơn giá tour');
     		return 0;
     	}
