@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2018 at 02:01 PM
+-- Generation Time: Jun 03, 2018 at 06:59 PM
 -- Server version: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- PHP Version: 7.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,16 +29,21 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `chitietdatphong` (
-  `ma_CTHD` char(5) COLLATE utf8_unicode_ci NOT NULL,
   `ma_HD` char(5) COLLATE utf8_unicode_ci NOT NULL,
   `ma_KS` char(5) COLLATE utf8_unicode_ci NOT NULL,
   `ma_phong` char(5) COLLATE utf8_unicode_ci NOT NULL,
-  `MAKH` char(5) COLLATE utf8_unicode_ci NOT NULL,
   `SL` int(11) NOT NULL,
-  `don_gia` int(11) NOT NULL,
   `ngay_den` date NOT NULL,
   `ngay_di` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `chitietdatphong`
+--
+
+INSERT INTO `chitietdatphong` (`ma_HD`, `ma_KS`, `ma_phong`, `SL`, `ngay_den`, `ngay_di`) VALUES
+('HDbUt', '1', '1', 33, '2018-06-20', '2018-06-22'),
+('HDcGl', '1', '1', 2, '2018-06-19', '2018-06-17');
 
 -- --------------------------------------------------------
 
@@ -58,23 +63,31 @@ CREATE TABLE `chitiethoadon` (
 
 INSERT INTO `chitiethoadon` (`MADH`, `MATOUR`, `NGAYDAT`) VALUES
 ('DH001', 'T0001', '2018-05-31'),
-('MHBwg', 'T0001', '2018-06-02'),
-('MHhgj', 'T0001', '2018-06-02'),
-('MHmza', 'T0001', '2018-06-02'),
-('MHV6S', 'T0001', '2018-06-02');
+('MHc4K', 'T0001', '2018-06-01'),
+('MHRYf', 'T0001', '2018-06-01'),
+('MHttz', 'T0001', '2018-06-02');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dondatphong`
+-- Table structure for table `contact`
 --
 
-CREATE TABLE `dondatphong` (
-  `ma_HD` char(5) COLLATE utf8_unicode_ci NOT NULL,
-  `ma_KS` char(5) COLLATE utf8_unicode_ci NOT NULL,
-  `MAKH` char(5) COLLATE utf8_unicode_ci NOT NULL,
-  `ngay_lap` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+CREATE TABLE `contact` (
+  `matn` char(5) NOT NULL,
+  `hoten` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `problem` varchar(100) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`matn`, `hoten`, `email`, `problem`, `message`) VALUES
+('TNPA8', 'Luu Cuong', 'cungaga@gmail.com', 'balashda s asdb', 'adaoasdpoashodashpiofaifasphpodfa'),
+('TNR0T', 'Luu Cuong', 'cungaga@gmail.com', 'ádasdasd', 'adasfasfgawefawefqqqqqqwqwqwqwdqwfqw');
 
 -- --------------------------------------------------------
 
@@ -95,35 +108,56 @@ CREATE TABLE `dondattour` (
 
 INSERT INTO `dondattour` (`MADH`, `TINHTRANG`, `SOLUONGNGUOI`, `MAKH`) VALUES
 ('DH001', b'0', 2, 'KH001'),
-('MHBwg', b'0', 2, 'KH001'),
-('MHhgj', b'0', 2, 'KH001'),
-('MHmza', b'0', 2, 'KH001'),
-('MHV6S', b'0', 2, 'KH001');
+('MHc4K', b'0', 2, 'KH001'),
+('MHRYf', b'0', 2, 'KH001'),
+('MHttz', b'0', 1, 'KHj2S');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `khachsan`
+-- Table structure for table `hoa_don`
 --
 
-CREATE TABLE `khachsan` (
-  `ma_KS` char(5) COLLATE utf8_unicode_ci NOT NULL,
-  `ten_KS` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `gioi_thieu` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `hinh_1` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `hinh_2` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `dia_chi` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `SDT` varchar(11) COLLATE utf8_unicode_ci NOT NULL
+CREATE TABLE `hoa_don` (
+  `ma_HD` char(5) COLLATE utf8_unicode_ci NOT NULL,
+  `ma_KH` char(5) COLLATE utf8_unicode_ci NOT NULL,
+  `ngay_dat` date NOT NULL,
+  `ngay_den` date NOT NULL,
+  `ngay_di` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `khachsan`
+-- Dumping data for table `hoa_don`
 --
 
-INSERT INTO `khachsan` (`ma_KS`, `ten_KS`, `gioi_thieu`, `hinh_1`, `hinh_2`, `dia_chi`, `SDT`) VALUES
-('MKS01', 'Khách sạn A', 'sdfsdfsd', 'khach_san_A_1.jpg', 'khách_sạn_Á hình 2', 'Đà Lạt', '0987654321'),
-('MKS02', 'Khách sạn B', 'dfdfbdfbdfvdf', 'khach_san_B_1.jpg', 'Khach_san_B hình 2', 'Đà Lạt', '1234567890'),
-('MKS03', 'Khách sạn C', 'dfgfdgdfgdf', 'hình C 1', 'hình C 2', 'Đà lạt', '1234509876');
+INSERT INTO `hoa_don` (`ma_HD`, `ma_KH`, `ngay_dat`, `ngay_den`, `ngay_di`) VALUES
+('HDbUt', 'KHj2S', '2018-06-03', '2018-06-20', '2018-06-22'),
+('HDcGl', 'KHj2S', '2018-06-03', '2018-06-19', '2018-06-17');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `khach_san`
+--
+
+CREATE TABLE `khach_san` (
+  `ma_KS` int(3) NOT NULL,
+  `ten_KS` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `gioi_thieu` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `hinh_1` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `hinh_2` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `dia_chi` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `tong_SL` int(6) NOT NULL,
+  `SDT` int(13) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `khach_san`
+--
+
+INSERT INTO `khach_san` (`ma_KS`, `ten_KS`, `gioi_thieu`, `hinh_1`, `hinh_2`, `dia_chi`, `tong_SL`, `SDT`) VALUES
+(1, 'Khách sạn A', 'abc xyz', 'khach_san_A_1.jpg', 'khach_san_A_2.jpg', 'Đà lạt', 30, 1234567890),
+(2, 'Khách sạn B', 'wwwww', 'khach_san_B_1.jpg', 'khach_san_B_2.jpg', 'Đà Lạt', 40, 987654321);
 
 -- --------------------------------------------------------
 
@@ -132,8 +166,8 @@ INSERT INTO `khachsan` (`ma_KS`, `ten_KS`, `gioi_thieu`, `hinh_1`, `hinh_2`, `di
 --
 
 CREATE TABLE `loai_phong` (
-  `ma_loai` char(5) COLLATE utf8_unicode_ci NOT NULL,
-  `ten_loai` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+  `ma_loai` int(2) NOT NULL,
+  `ten_loai` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -141,8 +175,8 @@ CREATE TABLE `loai_phong` (
 --
 
 INSERT INTO `loai_phong` (`ma_loai`, `ten_loai`) VALUES
-('ML001', 'Phòng đơn'),
-('ML002', 'Phòng đôi');
+(1, 'Phòng đơn'),
+(2, 'Phòng đôi');
 
 -- --------------------------------------------------------
 
@@ -151,11 +185,11 @@ INSERT INTO `loai_phong` (`ma_loai`, `ten_loai`) VALUES
 --
 
 CREATE TABLE `phong` (
-  `ma_phong` char(5) COLLATE utf8_unicode_ci NOT NULL,
-  `ma_KS` char(5) COLLATE utf8_unicode_ci NOT NULL,
-  `ma_loai` char(5) COLLATE utf8_unicode_ci NOT NULL,
-  `gia` int(11) NOT NULL,
-  `SL` int(11) NOT NULL
+  `ma_phong` int(4) NOT NULL,
+  `ma_KS` int(3) NOT NULL,
+  `ma_loai` int(2) NOT NULL,
+  `gia` int(8) NOT NULL,
+  `SL` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -163,10 +197,10 @@ CREATE TABLE `phong` (
 --
 
 INSERT INTO `phong` (`ma_phong`, `ma_KS`, `ma_loai`, `gia`, `SL`) VALUES
-('MP001', 'MKS01', 'ML001', 200000, 10),
-('MP002', 'MKS01', 'ML002', 300000, 20),
-('MP003', 'MKS02', 'ML001', 250000, 20),
-('MP004', 'MKS02', 'ML002', 450000, 20);
+(1, 1, 1, 200000, 10),
+(2, 1, 2, 300000, 20),
+(3, 2, 1, 250000, 20),
+(4, 2, 2, 400000, 20);
 
 -- --------------------------------------------------------
 
@@ -192,7 +226,8 @@ CREATE TABLE `taikhoan` (
 
 INSERT INTO `taikhoan` (`MAKH`, `USER_NAME`, `PASSWORD`, `ROLE_ID`, `GIOITINH`, `HOTEN`, `DIACHI`, `SDT`, `EMAIL`) VALUES
 ('KH001', 'lephu', '123', 1, b'1', 'phú mập heo', '82 nguyễn xí', '0123456789', 'phu@gmail.com'),
-('KH002', 'lephu1', '1234', 0, b'1', 'phú mập heo', '82 nguyễn xí', '0123456789', 'phu@gmail.com');
+('KH002', 'lephu1', '1234', 2, b'1', 'phú mập heo', '82 nguyễn xí', '0123456789', 'phu@gmail.com'),
+('KHj2S', 'Luu Sean', '9704061342284595', 2, b'1', 'Luu Cuong', '141 D5, TP.HCM', '01292508700', 'cuong.luusean@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -203,7 +238,6 @@ INSERT INTO `taikhoan` (`MAKH`, `USER_NAME`, `PASSWORD`, `ROLE_ID`, `GIOITINH`, 
 CREATE TABLE `tour` (
   `MATOUR` char(5) COLLATE utf8_unicode_ci NOT NULL,
   `DIADIEMTOUR` varchar(200) CHARACTER SET utf8 NOT NULL,
-  `LOTRINH` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `SOLUONGNGUOI` tinyint(4) NOT NULL,
   `NGAYDI` date NOT NULL,
   `NGAYVE` date NOT NULL,
@@ -214,15 +248,15 @@ CREATE TABLE `tour` (
 -- Dumping data for table `tour`
 --
 
-INSERT INTO `tour` (`MATOUR`, `DIADIEMTOUR`, `LOTRINH`, `SOLUONGNGUOI`, `NGAYDI`, `NGAYVE`, `DONGIA`) VALUES
-('T0001', 'TP.HCM - VŨNG TÀU', 'TP.HCM - PHÀ CÁT LÁI - QL51 - VŨNG TÀU', 10, '2018-06-15', '2018-06-18', 3000000),
-('T0002', 'TP.HCM - ĐÀ LẠT', 'TP.HCM - LONG THÀNH - QL20 - ĐÀ LẠT', 20, '2018-06-07', '2018-06-10', 5000000),
-('T0003', 'TP.HCM - PHAN THIẾT', 'TP.HCM - LONG THÀNH - QL1A PHAN THIẾT', 30, '2018-06-15', '2018-06-20', 5000000),
-('T0004', 'TP.HCM - NHA TRANG', 'TP.HCM - TRƯỜNG CHINH - LONG THÀNH - QL27C - NHA TRANG', 30, '2018-06-10', '2018-06-13', 6000000),
-('T0005', 'TP.HCM - ĐÀ NẴNG', 'TP.HCM - QL14 - QL1A ĐÀ NẴNG', 45, '2018-06-27', '2018-06-29', 20000000),
-('T0006', 'TP.HCM - HÀ NỘI', 'TP.HCM - QL22 - QL14 - QL1 - QL6 - HÀ NỘI', 10, '2018-06-27', '2018-06-30', 20000000),
-('T0007', 'TP.HCM - MŨI NÉ', 'TP.HCM - LONG THÀNH - QL1A - MŨI NÉ', 40, '2018-06-27', '2018-06-30', 20000000),
-('T0008', 'TP.HCM - CẦN GIỜ', 'TP.HCM - QL50 - ĐI PHÀ - LÝ NHƠN - CẦN GIỜ', 40, '2018-06-20', '2018-06-25', 8000000);
+INSERT INTO `tour` (`MATOUR`, `DIADIEMTOUR`, `SOLUONGNGUOI`, `NGAYDI`, `NGAYVE`, `DONGIA`) VALUES
+('T0001', 'TP.HCM - VŨNG TÀU', 10, '2018-06-15', '2018-06-20', 4000000),
+('T0002', 'TP.HCM - ĐÀ LẠT', 20, '2018-06-07', '2018-06-10', 5000000),
+('T0003', 'TP.HCM - PHAN THIẾT', 30, '2018-06-15', '2018-06-20', 5000000),
+('T0004', 'TP.HCM - NHA TRANG', 30, '2018-06-10', '2018-06-13', 6000000),
+('T0005', 'TP.HCM - ĐÀ NẴNG', 45, '2018-06-27', '2018-06-29', 20000000),
+('T0006', 'TP.HCM - HÀ NỘI', 10, '2018-06-27', '2018-06-30', 20000000),
+('T0007', 'TP.HCM - MŨI NÉ', 40, '2018-06-27', '2018-06-30', 20000000),
+('T0008', 'TP.HCM - CẦN GIỜ', 40, '2018-06-20', '2018-06-25', 8000000);
 
 --
 -- Indexes for dumped tables
@@ -232,9 +266,7 @@ INSERT INTO `tour` (`MATOUR`, `DIADIEMTOUR`, `LOTRINH`, `SOLUONGNGUOI`, `NGAYDI`
 -- Indexes for table `chitietdatphong`
 --
 ALTER TABLE `chitietdatphong`
-  ADD PRIMARY KEY (`ma_CTHD`),
-  ADD KEY `ma_phong` (`ma_phong`),
-  ADD KEY `ma_HD` (`ma_HD`);
+  ADD PRIMARY KEY (`ma_HD`);
 
 --
 -- Indexes for table `chitiethoadon`
@@ -244,11 +276,10 @@ ALTER TABLE `chitiethoadon`
   ADD KEY `FK_MATOUR` (`MATOUR`,`MADH`) USING BTREE;
 
 --
--- Indexes for table `dondatphong`
+-- Indexes for table `contact`
 --
-ALTER TABLE `dondatphong`
-  ADD PRIMARY KEY (`ma_HD`),
-  ADD KEY `MAKH` (`MAKH`);
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`matn`);
 
 --
 -- Indexes for table `dondattour`
@@ -258,9 +289,16 @@ ALTER TABLE `dondattour`
   ADD KEY `FK_MAKH` (`MAKH`);
 
 --
--- Indexes for table `khachsan`
+-- Indexes for table `hoa_don`
 --
-ALTER TABLE `khachsan`
+ALTER TABLE `hoa_don`
+  ADD PRIMARY KEY (`ma_HD`),
+  ADD KEY `FK_KH` (`ma_KH`);
+
+--
+-- Indexes for table `khach_san`
+--
+ALTER TABLE `khach_san`
   ADD PRIMARY KEY (`ma_KS`);
 
 --
@@ -273,9 +311,7 @@ ALTER TABLE `loai_phong`
 -- Indexes for table `phong`
 --
 ALTER TABLE `phong`
-  ADD PRIMARY KEY (`ma_phong`),
-  ADD KEY `ma_KS` (`ma_KS`),
-  ADD KEY `ma_loai` (`ma_loai`);
+  ADD PRIMARY KEY (`ma_phong`);
 
 --
 -- Indexes for table `taikhoan`
@@ -290,6 +326,28 @@ ALTER TABLE `tour`
   ADD PRIMARY KEY (`MATOUR`);
 
 --
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `khach_san`
+--
+ALTER TABLE `khach_san`
+  MODIFY `ma_KS` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `loai_phong`
+--
+ALTER TABLE `loai_phong`
+  MODIFY `ma_loai` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `phong`
+--
+ALTER TABLE `phong`
+  MODIFY `ma_phong` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -297,8 +355,7 @@ ALTER TABLE `tour`
 -- Constraints for table `chitietdatphong`
 --
 ALTER TABLE `chitietdatphong`
-  ADD CONSTRAINT `ma_HD` FOREIGN KEY (`ma_HD`) REFERENCES `dondatphong` (`ma_HD`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `ma_phong` FOREIGN KEY (`ma_phong`) REFERENCES `phong` (`ma_phong`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_HDPhong` FOREIGN KEY (`ma_HD`) REFERENCES `hoa_don` (`ma_HD`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `chitiethoadon`
@@ -308,23 +365,16 @@ ALTER TABLE `chitiethoadon`
   ADD CONSTRAINT `FK_MATOUR` FOREIGN KEY (`MATOUR`) REFERENCES `tour` (`MATOUR`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `dondatphong`
---
-ALTER TABLE `dondatphong`
-  ADD CONSTRAINT `MAKH` FOREIGN KEY (`MAKH`) REFERENCES `taikhoan` (`MAKH`) ON UPDATE CASCADE;
-
---
 -- Constraints for table `dondattour`
 --
 ALTER TABLE `dondattour`
   ADD CONSTRAINT `FK_MAKH` FOREIGN KEY (`MAKH`) REFERENCES `taikhoan` (`MAKH`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `phong`
+-- Constraints for table `hoa_don`
 --
-ALTER TABLE `phong`
-  ADD CONSTRAINT `ma_KS` FOREIGN KEY (`ma_KS`) REFERENCES `khachsan` (`ma_KS`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `ma_loai` FOREIGN KEY (`ma_loai`) REFERENCES `loai_phong` (`ma_loai`) ON UPDATE CASCADE;
+ALTER TABLE `hoa_don`
+  ADD CONSTRAINT `FK_KH` FOREIGN KEY (`ma_KH`) REFERENCES `taikhoan` (`MAKH`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
