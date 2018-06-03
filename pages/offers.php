@@ -122,9 +122,7 @@
 					<!-- Offers Grid -->
 
 					<div class="offers_grid">
-
 						<!-- Offers Item -->
-
 						<div class="offers_item rating_4">
 							<div class="row">
 								<div class="col-lg-1 temp_col"></div>
@@ -168,7 +166,6 @@
 						</div>
 
 						<!-- Offers Item -->
-
 						<div class="offers_item rating_3">
 							<div class="row">
 								<div class="col-lg-1 temp_col"></div>
@@ -212,7 +209,6 @@
 						</div>
 
 						<!-- Offers Item -->
-
 						<div class="offers_item rating_5">
 							<div class="row">
 								<div class="col-lg-1 temp_col"></div>
@@ -256,7 +252,6 @@
 						</div>
 
 						<!-- Offers Item -->
-
 						<div class="offers_item rating_4">
 							<div class="row">
 								<div class="col-lg-1 temp_col"></div>
@@ -300,7 +295,6 @@
 						</div>
 
 						<!-- Offers Item -->
-
 						<div class="offers_item rating_3">
 							<div class="row">
 								<div class="col-lg-1 temp_col"></div>
@@ -342,7 +336,6 @@
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 
