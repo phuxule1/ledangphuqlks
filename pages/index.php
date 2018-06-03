@@ -626,32 +626,6 @@
 		</div>
 	</div>
 
-	<div class="contact">
-		<div class="contact_background" style="background-image:url(../images/contact.png)"></div>
-
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-5">
-					<div class="contact_image">
-
-					</div>
-				</div>
-				<div class="col-lg-7">
-					<div class="contact_form_container">
-						<div class="contact_title">Gửi liên lạc</div>
-						<form action="#" id="contact_form" class="contact_form">
-							<input type="text" id="contact_form_name" class="contact_form_name input_field" placeholder="Tên" required="required" data-error="Name is required.">
-							<input type="text" id="contact_form_email" class="contact_form_email input_field" placeholder="E-mail" required="required" data-error="Email is required.">
-							<input type="text" id="contact_form_subject" class="contact_form_subject input_field" placeholder="Vấn đề" required="required" data-error="Subject is required.">
-							<textarea id="contact_form_message" class="text_field contact_form_message" name="message" rows="4" placeholder="Tin nhắn" required="required" data-error="Please, write us a message."></textarea>
-							<button type="submit" id="form_submit_button" class="form_submit_button button">Gửi tin nhắn<span></span><span></span><span></span></button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<!-- Footer -->
 	<?php include '../include/footer.php'; ?>
 	<script src="../js/index_custom.js"></script>

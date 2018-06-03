@@ -34,10 +34,10 @@
 					<!-- Contact Form -->
 					<div class="contact_form_container">
 						<div class="contact_title text-center">Điền thông tin</div>
-						<form action="#" id="contact_form" class="contact_form text-center">
-							<input type="text" id="contact_form_name" class="contact_form_name input_field" placeholder="Tên" required="required" data-error="Name is required.">
-							<input type="text" id="contact_form_email" class="contact_form_email input_field" placeholder="E-mail" required="required" data-error="Email is required.">
-							<input type="text" id="contact_form_subject" class="contact_form_subject input_field" placeholder="Vấn đề" required="required" data-error="Subject is required.">
+						<form action="../include/contact_handle.php" id="contact_form" class="contact_form text-center" method="POST">
+							<input type="text" id="contact_form_name" class="contact_form_name input_field" placeholder="Tên" required="required" data-error="Name is required." name="contact_form_name">
+							<input type="text" id="contact_form_email" class="contact_form_email input_field" placeholder="E-mail" required="required" data-error="Email is required." name="contact_form_email">
+							<input type="text" id="contact_form_subject" class="contact_form_subject input_field" placeholder="Vấn đề" required="required" data-error="Subject is required." name="contact_form_subject">
 							<textarea id="contact_form_message" class="text_field contact_form_message" name="message" rows="4" placeholder="Tin nhắn" required="required" data-error="Please, write us a message."></textarea>
 							<button type="submit" id="form_submit_button" class="form_submit_button button trans_200">Gửi tin nhắn<span></span><span></span><span></span></button>
 						</form>
