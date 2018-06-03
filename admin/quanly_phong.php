@@ -11,8 +11,8 @@
 	</nav>
 	<nav aria-label="breadcrumb">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item">Trang Chủ</li>
-			<li class="breadcrumb-item active" aria-current="page">Tổng Quan</li>
+			<li class="breadcrumb-item">Quản Lý Phòng</li>
+			<li class="breadcrumb-item active" aria-current="page">Danh Sách</li>
 		</ol>
 	</nav>
 	<div class="container-fluid">

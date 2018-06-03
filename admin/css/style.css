@@ -737,3 +737,18 @@ ul li{
 	background-color: #f1f1f1;
 	vertical-align: middle;
 }
+
+.error_msg{
+  display: none;
+  color: red;
+  font-size: 16px;
+}
+
+.custom_input{
+  border-radius: 3px !important;
+  margin: 0 0 10px 5px !important;
+}
+
+.btn_create_custom{
+  margin-left: 10px;
+}
