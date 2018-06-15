@@ -87,6 +87,7 @@ jQuery(document).ready(function($) {
 			var ngaydi = $('input#input_ngaydi').val();
 			var ngayve = $('input#input_ngayve').val();
 			var dongia = $('input#input_dongia').val();
+			
 			if(checkInput(diadiemtour, soluongnguoi, ngaydi, ngayve, dongia)){
 				$('#btn_confirm_edit_tour').attr('data-dismiss', 'modal');
 				$.ajax({
@@ -148,11 +149,11 @@ jQuery(document).ready(function($) {
 	//button confirm create tour
 	$('#btn_confirm_create_tour').on('click', function(event) {
 		event.preventDefault();
-		var diadiemtour = $('input#input_diadiemtour').val();
-		var soluongnguoi = $('input#input_soluongnguoi').val();
-		var ngaydi = $('input#input_ngaydi').val();
-		var ngayve = $('input#input_ngayve').val();
-		var dongia = $('input#input_dongia').val();
+		var diadiemtour = $('input#input_add_diadiemtour').val();
+		var soluongnguoi = $('input#input_add_soluongnguoi').val();
+		var ngaydi = $('input#input_add_ngaydi').val();
+		var ngayve = $('input#input_add_ngayve').val();
+		var dongia = $('input#input_add_dongia').val();
 
 		if(checkInput(diadiemtour, soluongnguoi, ngaydi, ngayve, dongia)){
 			$('#btn_confirm_create_tour').attr('data-dismiss', 'modal');
@@ -175,25 +176,25 @@ jQuery(document).ready(function($) {
 
 	//function check input to edit
 	function checkInput(diadiemtour, slnguoi, ngaydi, ngayve, dongia){
-		if(diadiemtour != null && diadiemtour == ""){
+		if(diadiemtour == null && diadiemtour == ""){
     		alert('Không được để trống địa điểm tour');
     		return 0;
     	}
-    	if(slnguoi != null && slnguoi == ""){
+    	if(slnguoi == null && slnguoi == ""){
     		alert('Không được để trống số lượng người');
     		return 0;
     	}else $('div#error_soluongnguoi').css('display', 'none');
-    	var check_date = moment(ngaydi).isValid();//use check valid function of moment.js
-    	if(!check_date){
+    	//use check valid function of moment.js
+    	if(!moment(ngaydi).isValid()){
     		alert('Vui lòng chọn ngày đi');
     		return 0;
     	}
-    	var check_date = moment(ngayve).isValid();//use check valid function of moment.js
-    	if(!check_date){
+    	//use check valid function of moment.js
+    	if(!moment(ngayve).isValid()){
     		alert('Vui lòng chọn ngày về');
     		return 0;
     	}
-    	if(dongia != null && dongia == ""){
+    	if(dongia == null && dongia == ""){
     		alert('Vui lòng nhập đơn giá tour');
     		return 0;
     	}

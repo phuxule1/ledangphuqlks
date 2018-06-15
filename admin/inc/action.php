@@ -121,4 +121,40 @@
 			echo mysqli_error($connect);
 		}
 	}
+
+	//*** QUAN LY DON DAT TOUR ***
+	if(isset($_POST['getListHDTourRequire'])){
+		$sql = "SELECT * FROM `dondattour`";
+		$result = mysqli_query($connect, $sql);
+		if(mysqli_num_rows($result) > 0){
+			$i=0;
+			while ($row = mysqli_fetch_assoc($result)) {
+				$i++;
+				echo '<tr>
+								<td>'.$i.'</td>
+								<td>'.$row['MADH'].'</td>';
+
+					if($row['TINHTRANG'])
+						echo '<td><input type="checkbox" id="" checked="checked"/></td>';
+					else
+						echo '<td><input type="checkbox" id=""/></td>';
+
+					echo '<td>'.$row['SOLUONGNGUOI'].'</td>';
+
+					$makh = $row['MAKH'];
+					$sql_ddt = "SELECT HOTEN FROM `taikhoan` WHERE MAKH = '$makh' ";
+					$result_ddt = mysqli_query($connect, $sql_ddt);
+					$row_ddt = mysqli_fetch_assoc($result_ddt);
+					echo '<td>'.$row_ddt['HOTEN'].'</td>
+								<td>
+									<div class="btn-group">
+										<a href="#" class="btn btn-primary" >Sửa</a>
+										<a href="#" class="btn btn-danger" >Xóa</a>
+									</div>
+								</td>
+							</tr>';
+			}
+		}
+	}
+
 ?>
