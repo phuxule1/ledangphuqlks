@@ -87,13 +87,13 @@ jQuery(document).ready(function($) {
 			var ngaydi = $('input#input_ngaydi').val();
 			var ngayve = $('input#input_ngayve').val();
 			var dongia = $('input#input_dongia').val();
-			
+
 			if(checkInput(diadiemtour, soluongnguoi, ngaydi, ngayve, dongia)){
 				$('#btn_confirm_edit_tour').attr('data-dismiss', 'modal');
 				$.ajax({
 					url: 'inc/action.php',
 					type: 'POST',
-					data: {updateTourRequire:1, diadiemtour:diadiemtour, soluongnguoi:soluongnguoi, 
+					data: {updateTourRequire:1, diadiemtour:diadiemtour, soluongnguoi:soluongnguoi,
 						ngaydi:ngaydi, ngayve:ngayve, dongia:dongia, tourId:tour_id},
 					success:function(data){
 						if(data!=null && data!="")
@@ -108,6 +108,7 @@ jQuery(document).ready(function($) {
 									var a = $('a[tourId="'+tour_id+'"]').parent().parent().parent().find('td:first-child');
 									a.nextAll().remove();
 									a.after(data);
+									callTrackModalAfterAjax();
 								}
 							});
 						}
@@ -160,7 +161,7 @@ jQuery(document).ready(function($) {
 			$.ajax({
 				url: 'inc/action.php',
 				type: 'POST',
-				data: {createTourRequire:1, diadiemtour:diadiemtour, soluongnguoi:soluongnguoi, 
+				data: {createTourRequire:1, diadiemtour:diadiemtour, soluongnguoi:soluongnguoi,
 						ngaydi:ngaydi, ngayve:ngayve, dongia:dongia},
 				success:function(data){
 					if(data!=null && data!="")
